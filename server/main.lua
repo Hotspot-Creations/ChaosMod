@@ -281,7 +281,7 @@ end)
 
 CreateThread(function()
     local syncAt = 0
-    log(('Modern v2.1.1 live edition ready (%d effects registered).'):format(#ChaosModEffects))
+    log(('HSC_ChaosMod v1.0.0 live edition ready (%d effects registered).'):format(#ChaosModEffects))
     while true do
         Wait(500)
         local now = GetGameTimer()

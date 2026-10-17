@@ -4,9 +4,9 @@
 
 **Developer:** Hotspot Creations  
 **Resource:** `ChaosMod`  
-**Version:** `1.0.0` (as declared in `fxmanifest.lua`)  
-**Game:** FiveM / GTA V  
-**Framework:** Standalone (no QBCore or ESX dependency)
+**Version:** `1.0.0`
+**Game:** FiveM
+**Framework:** Standalone
 
 HSC ChaosMod introduces unpredictable, synchronized effects to your FiveM server. Effects can change players' vision, alter vehicles and traffic, trigger explosions or weather, spawn objects, teleport players, and much more. A compact NUI display tells everyone when the next event is coming and what effect is currently active.
 
