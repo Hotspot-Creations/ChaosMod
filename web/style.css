@@ -1,0 +1,41 @@
+:root {
+  --accent: #ef4444;
+  --card-width: 420px;
+  --top-offset: 24px;
+  --paper: rgba(15, 17, 23, .93);
+  --muted: #9ba3b3;
+}
+* { box-sizing: border-box; }
+/* FiveM CEF draws the game BEHIND the NUI page. Its document canvas must stay transparent.
+   Do not add a dark color-scheme meta tag or an opaque body/root background. */
+html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: rgba(0, 0, 0, 0) !important; background-color: transparent !important; }
+html { color-scheme: normal; }
+body { font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif; user-select: none; pointer-events: none; color: #f9fafb; }
+.hidden { opacity: 0 !important; visibility: hidden !important; transform: translate(-50%, -10px) !important; }
+.hud, .announcement { position: absolute; left: 50%; width: min(var(--card-width), calc(100vw - 28px)); transform: translateX(-50%); transition: opacity .2s ease, transform .2s ease, visibility .2s; }
+.hud { top: var(--top-offset); padding: 12px 15px 13px; background: var(--paper); border: 1px solid rgba(255,255,255,.13); border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,.40), 0 0 0 1px rgba(0,0,0,.3) inset; overflow: hidden; }
+.hud:before { content: ''; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--accent); }
+.hud-top, .hud-brand, .hud-main { display: flex; align-items: center; justify-content: space-between; }
+.hud-top { gap: 12px; }
+.hud-brand { gap: 9px; min-width: 0; }
+.brand-name { font-size: 10px; font-weight: 850; letter-spacing: 2.05px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.logo-mark { display: inline-flex; flex-shrink: 0; align-items: center; height: 14px; gap: 2px; }
+.logo-mark span { width: 3px; border-radius: 2px; background: var(--accent); height: 8px; }
+.logo-mark span:nth-child(2) { height: 14px; }
+.logo-mark span:nth-child(3) { height: 10px; }
+.status-tag { font-size: 9px; font-weight: 800; letter-spacing: 1.0px; white-space: nowrap; padding: 4px 7px; border-radius: 5px; border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.07); color: #c7ccd8; }
+.hud-main { gap: 20px; margin: 11px 0 12px; }
+.hud-text { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.hud-heading { font-size: 15px; font-weight: 760; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.hud-caption { font-size: 11px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hud-clock { font-size: 24px; line-height: 1; font-variant-numeric: tabular-nums; font-weight: 850; letter-spacing: -.6px; flex-shrink: 0; }
+.progress-track { width: 100%; height: 5px; border-radius: 100px; overflow: hidden; background: rgba(255,255,255,.10); }
+.progress-fill { height: 100%; width: 100%; border-radius: inherit; background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 65%, white), var(--accent)); transform-origin: left center; transform: scaleX(0); box-shadow: 0 0 12px var(--accent); }
+.hud.is-active .status-tag { color: #ffe6e8; border-color: rgba(239,68,68,.28); background: rgba(239,68,68,.20); }
+.hud.is-paused .status-tag { background: rgba(255,185,65,.13); color: #f7c87e; }
+.hud.is-paused .progress-fill { filter: grayscale(1); }
+.announcement { top: calc(var(--top-offset) + 132px); border: 1px solid rgba(255,255,255,.12); border-left: 3px solid var(--accent); border-radius: 9px; background: rgba(15,17,23,.93); box-shadow: 0 8px 25px rgba(0,0,0,.35); padding: 11px 14px 12px; }
+.announcement-top { font-size: 9px; font-weight: 850; letter-spacing: 1.6px; color: #ffbdbd; }
+.announcement-name { font-size: 16px; margin-top: 6px; font-weight: 800; }
+.announcement-description { font-size: 11px; line-height: 1.4; margin-top: 4px; color: #bfc5d0; }
+@media (max-width: 480px) { .hud { padding: 10px 12px 11px; } .hud-heading { font-size: 13px; } .brand-name { letter-spacing: 1px; } }

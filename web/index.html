@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>ChaosMod HUD</title>
+</head>
+<body>
+    <main id="hud" class="hud hidden" role="status" aria-live="off">
+        <div class="hud-top">
+            <div class="hud-brand">
+                <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span class="brand-name" id="brand">CHAOS MODE</span>
+            </div>
+            <span class="status-tag" id="status-tag">NEXT EFFECT</span>
+        </div>
+        <div class="hud-main">
+            <div class="hud-text">
+                <span class="hud-heading" id="heading">Chaos incoming</span>
+                <span class="hud-caption" id="caption">Preparing the next event</span>
+            </div>
+            <div class="hud-clock" id="clock">--:--</div>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+    </main>
+    <aside class="announcement hidden" id="announcement" aria-live="off">
+        <div class="announcement-top">NEW CHAOS EFFECT</div>
+        <div class="announcement-name" id="announcement-name">Effect name</div>
+        <div class="announcement-description" id="announcement-description"></div>
+    </aside>
+    <script src="app.js"></script>
+</body>
+</html>
